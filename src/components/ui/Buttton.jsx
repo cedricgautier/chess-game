@@ -5,7 +5,10 @@ const Button = (props) => {
 
   return (
     <button
-      className={clsx("text-white rounded-lg font-semibold", className)}
+      className={clsx(
+        "text-white rounded-lg font-semibold bg-blue-600 active:bg-blue-700",
+        className
+      )}
       {...otherProps}
     />
   )

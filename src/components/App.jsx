@@ -1,9 +1,9 @@
 import { AppContextProvider } from "./AppContextProvider"
-import StartPage from "./pages/StartPage"
+import { StartPage } from "./StartPage"
 
 const App = () => (
   <AppContextProvider>
-    <StartPage></StartPage>
+    <StartPage />
   </AppContextProvider>
 )
 

@@ -1,17 +1,20 @@
-import { createContext, useState } from "react"
+import { createContext, useCallback, useState } from "react"
 import { getDefaultPlayerInfo } from "../helpers/players"
+import { merge } from "@corex/deepmerge"
 
 const AppContext = createContext()
 const initializeChessState = () => ({
-  active: false,
-  chessboard: () =>
-    Array.from(Array(8).keys())
-      .map((i) => i + 1)
-      .reduce((acc, value) => {
-        acc[value] = ["a", "b", "c", "d", "e", "f", "g", "h"]
-
-        return acc
-      }, {}),
+  active: true,
+  chessboard: {
+    cells: [...Array(8)].reduce(
+      (cells, _, index) => ({
+        [index + 1]: ["a", "b", "c", "d", "e", "f", "g", "h"]
+      }),
+      {}
+    ),
+    columns: ["a", "b", "c", "d", "e", "f", "g", "h"],
+    rows: [...Array(8)].map((_, index) => index + 1)
+  },
   checkmateDetected: false,
   players: {
     playerOne: getDefaultPlayerInfo("white"),
@@ -20,9 +23,21 @@ const initializeChessState = () => ({
 })
 
 export const AppContextProvider = (props) => {
-  const [chessState, setChessState] = useState(initializeChessState())
+  const [chessState, setChessState] = useState(initializeChessState)
+  const update = (updateValue) =>
+    setChessState((previousState) =>
+      merge([previousState, updateValue(previousState)])
+    )
+  const play = useCallback(
+    (event) => {
+      const position = event.target.getAttribute("data-position")
 
-  return (
-    <AppContext.Provider {...props} value={{ chessState, setChessState }} />
+      console.log(position.split("-"))
+    },
+    [update]
   )
+
+  return <AppContext.Provider {...props} value={{ chessState, update, play }} />
 }
+
+export default AppContext

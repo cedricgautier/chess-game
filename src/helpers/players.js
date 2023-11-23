@@ -1,4 +1,4 @@
-import { pieces as p } from "../constants/pieces"
+import { piecesByColor as p } from "../constants/pieces"
 
 export const getPlayerSymbolColor = (
   whiteSymbol,
