@@ -12,14 +12,16 @@ export function StartPage() {
 
   if (chessState.active) {
     return (
-      <Layout>
-        <Chessgame />
-      </Layout>
+      <div className="bg-sky-950">
+        <Layout>
+          <Chessgame />
+        </Layout>
+      </div>
     )
   }
 
   return (
-    <div>
+    <div className="">
       <h1>Click start button to play</h1>
       <Button onClick={handleStartClick}>Start</Button>
     </div>

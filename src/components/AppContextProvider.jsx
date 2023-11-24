@@ -1,6 +1,6 @@
 import { createContext, useCallback, useState } from "react"
-import { getDefaultPlayerInfo } from "../helpers/players"
 import { merge } from "@corex/deepmerge"
+import { getDefaultPlayerInfo } from "../utils/playersAPI.ts"
 
 const AppContext = createContext()
 const initializeChessState = () => ({
@@ -12,7 +12,7 @@ const initializeChessState = () => ({
       }),
       {}
     ),
-    columns: ["a", "b", "c", "d", "e", "f", "g", "h"],
+    columns: [...Array(8)].map((_, index) => index + 1),
     rows: [...Array(8)].map((_, index) => index + 1)
   },
   checkmateDetected: false,
@@ -31,8 +31,9 @@ export const AppContextProvider = (props) => {
   const play = useCallback(
     (event) => {
       const position = event.target.getAttribute("data-position")
-
-      console.log(position.split("-"))
+      const [xPosition, yPosition] = position.split("-")
+      // eslint-disable-next-line no-console
+      console.log(xPosition, yPosition)
     },
     [update]
   )

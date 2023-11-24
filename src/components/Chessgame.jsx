@@ -5,16 +5,17 @@ import AppContext from "./AppContextProvider"
 
 const Chessgame = () => {
   const { chessState, play } = useContext(AppContext)
+  const letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
 
   return (
-    <Layout>
+    <Layout className="">
       <div className="w-[576px] flex flex-wrap">
-        {chessState.chessboard.rows.flatMap((number) =>
-          chessState.chessboard.columns
-            .map((letter) => (
+        {chessState.chessboard.columns.flatMap((letter) =>
+          chessState.chessboard.rows
+            .map((number) => (
               <button
                 key={`${letter}-${number}`}
-                className="w-[64px] h-[64px] border active:bg-slate-100 text-3xl"
+                className="w-[64px] h-[64px] border active:bg-yellow-500 text-3xl odd:bg-sky-50 odd:text-sky-900 even:bg-sky-900 even:text-sky-50"
                 data-position={`${letter}-${number}`}
                 onClick={play}>
                 {letter}-{number}
@@ -22,17 +23,17 @@ const Chessgame = () => {
             ))
             .concat(
               <span
-                key={number}
+                key={letter}
                 className="w-[64px] h-[64px] text-slate-400 flex items-center justify-center text-3xl">
-                {number}
+                {letter}
               </span>
             )
         )}
-        {chessState.chessboard.columns.map((letter) => (
+        {letters.map((letter) => (
           <span
             key={letter}
             className="w-[64px] h-[64px] text-slate-400 flex items-center justify-center text-3xl">
-            {letter}
+            {letter.toUpperCase()}
           </span>
         ))}
       </div>
