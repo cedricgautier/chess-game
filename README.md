@@ -3,6 +3,8 @@
 > [!NOTE] Let's make a game!
 > Make a chess game playable on the same machine by two human players.
 
+test
+
 ## Requirements
 
 You want to make a game of chess with these features in order to play as two people :
