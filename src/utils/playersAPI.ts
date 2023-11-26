@@ -25,6 +25,7 @@ export const getPlayerPieces = (playerColor: string): Object => {
   const lowercasedPlayerColor = playerColor.toLowerCase()
 
   if (lowercasedPlayerColor === playerColors.WHITE) {
+    console.log(pieceBasePositions.white)
     return pieceBasePositions.white
   }
 
