@@ -21,9 +21,11 @@ export function StartPage() {
   }
 
   return (
-    <div className="">
-      <h1>Click start button to play</h1>
-      <Button onClick={handleStartClick}>Start</Button>
-    </div>
+    <Layout>
+      <h1 className="p-2 text-4xl">Click start button to play</h1>
+      <Button className="center p-4 text-3xl" onClick={handleStartClick}>
+        Start
+      </Button>
+    </Layout>
   )
 }

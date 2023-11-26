@@ -9,6 +9,17 @@ const Chessgame = () => {
 
   return (
     <Layout className="">
+      <div className="text-right text-white p-2 mr-14">
+        <ul>
+          <li>{`Current Player: ${chessState.activePlayer.toUpperCase()}`}</li>
+          <li>{`Amount of eaten pieces by ${chessState.players.playerOne.color.toUpperCase()} : ${
+            chessState.players.playerOne.piecesEaten
+          }`}</li>
+          <li>{`Amount of eaten pieces by ${chessState.players.playerTwo.color.toUpperCase()} : ${
+            chessState.players.playerTwo.piecesEaten
+          }`}</li>
+        </ul>
+      </div>
       <div className="w-[576px] flex flex-wrap">
         {chessState.chessboard.columns.flatMap((letter) =>
           chessState.chessboard.rows
