@@ -1,13 +1,7 @@
 {
   "root": true,
-  "extends": [
-    "eslint:recommended",
-    "prettier",
-    "plugin:react/recommended",
-    " plugin:@typescript-eslint/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "react-hooks", "@typescript-eslint"],
+  "extends": ["eslint:recommended", "prettier", "plugin:react/recommended"],
+  "plugins": ["react", "react-hooks"],
   "env": {
     "browser": true,
     "node": true,
@@ -39,15 +33,6 @@
     "no-unused-private-class-members": "error",
     "require-atomic-updates": "error",
     "arrow-body-style": ["error", "as-needed"],
-    "@typescript-eslint/camelcase": [
-      "error",
-      {
-        "properties": "always",
-        "ignoreDestructuring": true,
-        "ignoreImports": true,
-        "ignoreGlobals": true
-      }
-    ],
     "camelcase": [
       "error",
       {
@@ -137,7 +122,6 @@
     "no-unneeded-ternary": ["error", { "defaultAssignment": false }],
     "no-unused-expressions": ["error", { "enforceForJSX": true }],
     "no-unused-vars": ["error", { "varsIgnorePattern": "_" }],
-    "@typescript-eslint/no-unused-vars": ["error"],
     "no-useless-call": "error",
     "no-useless-computed-key": ["error", { "enforceForClassMembers": true }],
     "no-useless-concat": "error",
