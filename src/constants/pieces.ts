@@ -13,6 +13,15 @@ export const piecesByColor = {
   BLACK_PAWN: "♟"
 }
 
+export const pieceTypes = {
+  KING: "king",
+  QUEEN: "queen",
+  ROOK: "rook",
+  BISHOP: "bishop",
+  KNIGHT: "knight",
+  PAWN: "pawn"
+}
+
 export const pieceBasePositions = {
   white: {
     BISHOP: [

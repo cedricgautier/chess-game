@@ -1,6 +1,7 @@
 import { createContext, useCallback, useState } from "react"
 import { merge } from "@corex/deepmerge"
 import * as pl from "../utils/playersAPI.ts"
+import * as gp from "../utils/gameplayAPI.ts"
 import { playerColors } from "../constants/players.ts"
 
 const AppContext = createContext()
@@ -32,8 +33,13 @@ export const AppContextProvider = (props) => {
     )
   const play = useCallback(
     (event) => {
-      const position = event.target.getAttribute("data-position")
-      const [xPosition, yPosition] = position.split("-")
+      const [xPiecePosition, yPiecePosition] = event.target
+        .getAttribute("data-position")
+        .split("-")
+      const chosenPiecePosition = gp.getPiecePosition(
+        xPiecePosition,
+        yPiecePosition
+      )
 
       setChessState((previousState) => {
         const newState = { ...previousState }
