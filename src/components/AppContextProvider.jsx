@@ -9,12 +9,6 @@ const initializeChessState = () => ({
   active: false,
   activePlayer: playerColors.WHITE,
   chessboard: {
-    cells: [...Array(8)].reduce(
-      (cells, _, index) => ({
-        [index + 1]: ["a", "b", "c", "d", "e", "f", "g", "h"]
-      }),
-      {}
-    ), // Todo: REMOVE THIS SHIT
     columns: [...Array(8)].map((_, index) => index + 1),
     rows: [...Array(8)].map((_, index) => index + 1)
   },
@@ -36,10 +30,9 @@ export const AppContextProvider = (props) => {
       const [xPiecePosition, yPiecePosition] = event.target
         .getAttribute("data-position")
         .split("-")
-      const chosenPiecePosition = gp.getPiecePosition(
-        xPiecePosition,
-        yPiecePosition
-      )
+      const chosenPiece = gp.getPiecePosition(xPiecePosition, yPiecePosition)
+      const chosenPiece = gp.getPiecePosition(xPiecePosition, yPiecePosition)
+      const movePieceTo = gp.movePiece(chosenPiece, wantedPosition)
 
       setChessState((previousState) => {
         const newState = { ...previousState }
