@@ -1,5 +1,6 @@
 import { playerColors } from "../constants/players.ts"
 import { pieceBasePositions } from "../constants/pieces.ts"
+import { Piece } from "../classes/piece.ts"
 
 export const getDefaultPlayerInfo = (playerColor: string) => ({
   color: playerColor,
@@ -8,24 +9,24 @@ export const getDefaultPlayerInfo = (playerColor: string) => ({
   moves: 0,
   piecesEaten: 0,
   kingDefeated: false,
-  pieces: getPlayerPieces(playerColor)
+  pieces: getInitialPlayerPieces(playerColor)
 })
 
-export const switchPlayer = (activePlayer: String) => {
-  if (activePlayer == playerColors.WHITE) {
+export const switchPlayer = (activePlayer: String): String => {
+  if (activePlayer === playerColors.WHITE) {
     return playerColors.BLACK
   }
 
-  if (activePlayer == playerColors.BLACK) {
+  if (activePlayer === playerColors.BLACK) {
     return playerColors.WHITE
   }
+
+  return ""
 }
 
-export const getPlayerPieces = (playerColor: string): Object => {
-  const lowercasedPlayerColor = playerColor.toLowerCase()
-
+export const getInitialPlayerPieces = (playerColor: string): Object => {
+  const lowercasedPlayerColor = playerColor
   if (lowercasedPlayerColor === playerColors.WHITE) {
-    console.log(pieceBasePositions.white)
     return pieceBasePositions.white
   }
 

@@ -3,11 +3,14 @@ import { Piece } from "../classes/piece.ts" // eslint-disable-line no-unused-var
 import { pieceTypes as pt } from "../constants/pieces.ts"
 import * as mv from "../utils/movePieces.ts"
 
-export const eatPiece = () => ({ x: null, y: null })
+export const eatPiece = (): Piece["position"] => ({
+  x: 0,
+  y: 0
+})
 
-export const getPiecePosition = (xPosition, yPosition) => ({
-  xPosition,
-  yPosition
+export const getPiecePosition = (xPosition, yPosition): Piece["position"] => ({
+  x: xPosition,
+  y: yPosition
 })
 
 export const movePiece = (
@@ -16,7 +19,7 @@ export const movePiece = (
 ): Piece => {
   const validPosition = validatePositionInRange(chosenPiece, wantedPosition)
 
-  if (chosenPiece.type.toLowerCase() !== pt.PAWN) {
+  if (chosenPiece.type !== pt.PAWN) {
     return moveLikeSpecial(chosenPiece, validPosition)
   }
 
@@ -27,6 +30,7 @@ const validatePositionInRange = (
   wantedPosition: Piece["position"]
 ): Piece["position"] => {
   const [isXOutOfRange, isYOutOfRange] = checkWantedRange(wantedPosition)
+
   return isXOutOfRange || isYOutOfRange ? chosenPiece.position : wantedPosition
 }
 const checkWantedRange = (
@@ -42,11 +46,11 @@ const moveLikeSpecial = (
   chosenPiece: Piece,
   wantedPosition: Piece["position"]
 ): Piece => {
-  if (chosenPiece.type.toLowerCase() === pt.KING || pt.QUEEN) {
+  if (chosenPiece.type === pt.KING || pt.QUEEN) {
     return moveAsRoyalHeighness(chosenPiece, wantedPosition)
   }
 
-  if (chosenPiece.type.toLowerCase() === pt.ROOK || pt.KNIGHT) {
+  if (chosenPiece.type === pt.ROOK || pt.KNIGHT) {
     return moveAsCavalry(chosenPiece, wantedPosition)
   }
 
@@ -56,11 +60,11 @@ const moveAsRoyalHeighness = (
   chosenPiece: Piece,
   wantedPosition: Piece["position"]
 ): Piece => {
-  if (chosenPiece.type.toLowerCase() === pt.KING) {
+  if (chosenPiece.type === pt.KING) {
     return mv.moveLikeKing(chosenPiece, wantedPosition)
   }
 
-  if (chosenPiece.type.toLowerCase() === pt.QUEEN) {
+  if (chosenPiece.type === pt.QUEEN) {
     return mv.moveLikeQueen(chosenPiece, wantedPosition)
   }
 
@@ -70,12 +74,12 @@ const moveAsCavalry = (
   chosenPiece: Piece,
   wantedPosition: Piece["position"]
 ): Piece => {
-  switch (chosenPiece.type.toLowerCase()) {
-    case pt.KNIGHT:
-      return mv.movelikeKnight(chosenPiece, wantedPosition)
+  if (chosenPiece.type === pt.KNIGHT) {
+    return mv.movelikeKnight(chosenPiece, wantedPosition)
+  }
 
-    case pt.ROOK:
-      return mv.moveLikeRook(chosenPiece, wantedPosition)
+  if (chosenPiece.type === pt.ROOK) {
+    return mv.moveLikeRook(chosenPiece, wantedPosition)
   }
 
   return chosenPiece

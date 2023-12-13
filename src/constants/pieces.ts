@@ -1,3 +1,6 @@
+import { Piece } from "../classes/piece.ts"
+import { playerColors } from "./players.ts"
+
 export const piecesByColor = {
   WHITE_KING: "♔",
   WHITE_QUEEN: "♕",
@@ -25,55 +28,54 @@ export const pieceTypes = {
 export const pieceBasePositions = {
   white: {
     BISHOP: [
-      { x: "8", y: "3" },
-      { x: "8", y: "6" }
+      new Piece({ x: 8, y: 3 }, playerColors.WHITE, pieceTypes.BISHOP),
+      new Piece({ x: 8, y: 6 }, playerColors.WHITE, pieceTypes.BISHOP)
     ],
-    KING: [{ x: "8", y: "5" }],
+    KING: [new Piece({ x: 8, y: 5 }, playerColors.WHITE, pieceTypes.KING)],
     KNIGHT: [
-      { x: "8", y: "" },
-      { x: "8", y: "" }
+      new Piece({ x: 8, y: 2 }, playerColors.WHITE, pieceTypes.KNIGHT),
+      new Piece({ x: 8, y: 7 }, playerColors.WHITE, pieceTypes.KNIGHT)
     ],
     PAWN: [
-      { x: "7", y: "1" },
-      { x: "7", y: "2" },
-      { x: "7", y: "3" },
-      { x: "7", y: "4" },
-      { x: "7", y: "5" },
-      { x: "7", y: "6" },
-      { x: "7", y: "7" },
-      { x: "7", y: "8" }
+      new Piece({ x: 7, y: 1 }, playerColors.WHITE, pieceTypes.PAWN),
+      new Piece({ x: 7, y: 2 }, playerColors.WHITE, pieceTypes.PAWN),
+      new Piece({ x: 7, y: 3 }, playerColors.WHITE, pieceTypes.PAWN),
+      new Piece({ x: 7, y: 4 }, playerColors.WHITE, pieceTypes.PAWN),
+      new Piece({ x: 7, y: 5 }, playerColors.WHITE, pieceTypes.PAWN),
+      new Piece({ x: 7, y: 6 }, playerColors.WHITE, pieceTypes.PAWN),
+      new Piece({ x: 7, y: 7 }, playerColors.WHITE, pieceTypes.PAWN),
+      new Piece({ x: 7, y: 8 }, playerColors.WHITE, pieceTypes.PAWN)
     ],
-    QUEEN: [{ x: "8", y: "4" }],
+    QUEEN: [new Piece({ x: 8, y: 4 }, playerColors.WHITE, pieceTypes.QUEEN)],
     ROOK: [
-      { x: "8", y: "1" },
-      { x: "8", y: "8" }
+      new Piece({ x: 8, y: 1 }, playerColors.WHITE, pieceTypes.ROOK),
+      new Piece({ x: 8, y: 8 }, playerColors.WHITE, pieceTypes.ROOK)
     ]
   },
-
   black: {
     BISHOP: [
-      { x: "1", y: "3" },
-      { x: "1", y: "6" }
+      new Piece({ x: 1, y: 3 }, playerColors.BLACK, pieceTypes.BISHOP),
+      new Piece({ x: 1, y: 6 }, playerColors.BLACK, pieceTypes.BISHOP)
     ],
-    KING: [{ x: "1", y: "5" }],
+    KING: [new Piece({ x: 1, y: 5 }, playerColors.BLACK, pieceTypes.KING)],
     KNIGHT: [
-      { x: "1", y: "2" },
-      { x: "1", y: "7" }
+      new Piece({ x: 1, y: 2 }, playerColors.BLACK, pieceTypes.KNIGHT),
+      new Piece({ x: 1, y: 7 }, playerColors.BLACK, pieceTypes.KNIGHT)
     ],
     PAWN: [
-      { x: "2", y: "1" },
-      { x: "2", y: "2" },
-      { x: "2", y: "3" },
-      { x: "2", y: "4" },
-      { x: "2", y: "5" },
-      { x: "2", y: "6" },
-      { x: "2", y: "7" },
-      { x: "2", y: "8" }
+      new Piece({ x: 2, y: 1 }, playerColors.BLACK, pieceTypes.PAWN),
+      new Piece({ x: 2, y: 2 }, playerColors.BLACK, pieceTypes.PAWN),
+      new Piece({ x: 2, y: 3 }, playerColors.BLACK, pieceTypes.PAWN),
+      new Piece({ x: 2, y: 4 }, playerColors.BLACK, pieceTypes.PAWN),
+      new Piece({ x: 2, y: 5 }, playerColors.BLACK, pieceTypes.PAWN),
+      new Piece({ x: 2, y: 6 }, playerColors.BLACK, pieceTypes.PAWN),
+      new Piece({ x: 2, y: 7 }, playerColors.BLACK, pieceTypes.PAWN),
+      new Piece({ x: 2, y: 8 }, playerColors.BLACK, pieceTypes.PAWN)
     ],
-    QUEEN: [{ x: "1", y: "" }],
+    QUEEN: [new Piece({ x: 1, y: 4 }, playerColors.BLACK, pieceTypes.QUEEN)],
     ROOK: [
-      { x: "1", y: "" },
-      { x: "1", y: "" }
+      new Piece({ x: 1, y: 1 }, playerColors.BLACK, pieceTypes.ROOK),
+      new Piece({ x: 1, y: 8 }, playerColors.BLACK, pieceTypes.ROOK)
     ]
   }
 }

@@ -30,9 +30,12 @@ export const AppContextProvider = (props) => {
       const [xPiecePosition, yPiecePosition] = event.target
         .getAttribute("data-position")
         .split("-")
-      const chosenPiece = gp.getPiecePosition(xPiecePosition, yPiecePosition)
-      const chosenPiece = gp.getPiecePosition(xPiecePosition, yPiecePosition)
-      const movePieceTo = gp.movePiece(chosenPiece, wantedPosition)
+      const chosenPiecePosition = gp.getPiecePosition(
+        xPiecePosition,
+        yPiecePosition
+      )
+      const wantedPosition = gp.getPiecePosition(xPiecePosition, yPiecePosition)
+      const movePieceTo = gp.movePiece(chosenPiecePosition, wantedPosition)
 
       setChessState((previousState) => {
         const newState = { ...previousState }
