@@ -2,10 +2,28 @@ import { useContext } from "react"
 import Stats from "./Stats"
 import Layout from "./ui/Layout"
 import AppContext from "./AppContextProvider"
+import { Piece } from "../classes/piece.ts"
 
+const findPiece = (pieceCoordinates, pieces) => {
+  const { black, white } = pieces
+  const foundPieceInBlack = black.find((blackPiece) =>
+    console.log(blackPiece.position)
+  )
+  const foundPieceInWhite = white.find((whitePiece) =>
+    console.log(whitePiece.position)
+  )
+
+  return {}
+}
 const Chessgame = () => {
   const { chessState, play } = useContext(AppContext)
   const letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
+  const getPieceSymbol = (letter, number, pieces) => {
+    const pieceCoordinates = { x: letter, y: number }
+    const piece = findPiece(pieceCoordinates, pieces)
+
+    return piece
+  }
 
   return (
     <Layout>
@@ -20,7 +38,7 @@ const Chessgame = () => {
                 className="w-[64px] h-[64px] border active:bg-yellow-500 text-3xl odd:bg-sky-50 odd:text-sky-900 even:bg-sky-900 even:text-sky-50"
                 data-position={`${letter}-${number}`}
                 onClick={play}>
-                {letter}-{number}
+                {getPieceSymbol(letter, number, chessState.pieces)}
               </button>
             ))
             .concat(

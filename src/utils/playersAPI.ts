@@ -8,8 +8,7 @@ export const getDefaultPlayerInfo = (playerColor: string) => ({
   chosenPlaceToMove: null,
   moves: 0,
   piecesEaten: 0,
-  kingDefeated: false,
-  pieces: getInitialPlayerPieces(playerColor)
+  kingDefeated: false
 })
 
 export const switchPlayer = (activePlayer: String): String => {
@@ -22,17 +21,4 @@ export const switchPlayer = (activePlayer: String): String => {
   }
 
   return ""
-}
-
-export const getInitialPlayerPieces = (playerColor: string): Object => {
-  const lowercasedPlayerColor = playerColor
-  if (lowercasedPlayerColor === playerColors.WHITE) {
-    return pieceBasePositions.white
-  }
-
-  if (lowercasedPlayerColor === playerColors.BLACK) {
-    return pieceBasePositions.black
-  }
-
-  return {}
 }

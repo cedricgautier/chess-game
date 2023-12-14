@@ -3,6 +3,7 @@ import { merge } from "@corex/deepmerge"
 import * as pl from "../utils/playersAPI.ts"
 import * as gp from "../utils/gameplayAPI.ts"
 import { playerColors } from "../constants/players.ts"
+import { pieceBasePositions } from "../constants/pieces.ts"
 
 const AppContext = createContext()
 const initializeChessState = () => ({
@@ -12,6 +13,7 @@ const initializeChessState = () => ({
     columns: [...Array(8)].map((_, index) => index + 1),
     rows: [...Array(8)].map((_, index) => index + 1)
   },
+  pieces: pieceBasePositions,
   checkmateDetected: false,
   players: {
     playerOne: pl.getDefaultPlayerInfo(playerColors.WHITE),
