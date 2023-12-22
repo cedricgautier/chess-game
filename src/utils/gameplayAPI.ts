@@ -3,11 +3,40 @@ import { Piece } from "../classes/piece.ts" // eslint-disable-line no-unused-var
 import { pieceTypes as pt } from "../constants/pieces.ts"
 import * as mv from "../utils/movePieces.ts"
 
+export const findPiece = (pieceCoordinates, pieces) => {
+  const { black, white } = pieces
+  const foundPieceInBlack = black.find(
+    ({ position }) => position === pieceCoordinates
+  )
+
+  for (const piece of white && black) {
+    if (
+      piece.position.x === pieceCoordinates.x &&
+      piece.position.y === pieceCoordinates.y
+    ) {
+      console.log(piece)
+      return piece
+    }
+  }
+} // Not Working
+export const getPieceSymbol = (letter, number, pieces) => {
+  return findPiece({ x: letter, y: number }, pieces).symbol
+}
+export const getNewPiecePosition = (
+  chosenPiece: Piece,
+  wantedPosition: Piece["position"]
+): Piece => {
+  const { x, y } = wantedPosition
+  const pieceWithWantedPosition = { ...chosenPiece }
+  pieceWithWantedPosition.position.x = x
+  pieceWithWantedPosition.position.y = y
+
+  return pieceWithWantedPosition
+}
 export const eatPiece = (): Piece["position"] => ({
   x: 0,
   y: 0
 })
-
 export const getPiecePosition = (xPosition, yPosition): Piece["position"] => ({
   x: xPosition,
   y: yPosition

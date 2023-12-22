@@ -104,3 +104,9 @@ pawn : if not the same column with a limit of X + 1, then you cannot
 ♗ Bishop
 ♘ Knight
 ♙ Pawn
+
+What is missing/not working :
+
+- FindPiece Function
+- checkWhichPlayerTurn
+- Some functions to complete play flow

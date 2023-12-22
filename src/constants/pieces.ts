@@ -31,97 +31,113 @@ export const pieceBasePositions = {
       { x: 8, y: 3 },
       playerColors.WHITE,
       pieceTypes.BISHOP,
-      piecesByColor.WHITE_BISHOP
+      piecesByColor.WHITE_BISHOP,
+      false
     ),
     new Piece(
       { x: 8, y: 6 },
       playerColors.WHITE,
       pieceTypes.BISHOP,
-      piecesByColor.WHITE_BISHOP
+      piecesByColor.WHITE_BISHOP,
+      false
     ),
     new Piece(
       { x: 8, y: 5 },
       playerColors.WHITE,
       pieceTypes.KING,
-      piecesByColor.WHITE_KING
+      piecesByColor.WHITE_KING,
+      false
     ),
     new Piece(
       { x: 8, y: 2 },
       playerColors.WHITE,
       pieceTypes.KNIGHT,
-      piecesByColor.WHITE_KNIGHT
+      piecesByColor.WHITE_KNIGHT,
+      false
     ),
     new Piece(
       { x: 8, y: 7 },
       playerColors.WHITE,
       pieceTypes.KNIGHT,
-      piecesByColor.WHITE_KNIGHT
+      piecesByColor.WHITE_KNIGHT,
+      false
     ),
     new Piece(
       { x: 7, y: 1 },
       playerColors.WHITE,
       pieceTypes.PAWN,
-      piecesByColor.WHITE_PAWN
+      piecesByColor.WHITE_PAWN,
+      false
     ),
     new Piece(
       { x: 7, y: 2 },
       playerColors.WHITE,
       pieceTypes.PAWN,
-      piecesByColor.WHITE_PAWN
+      piecesByColor.WHITE_PAWN,
+      false
     ),
     new Piece(
       { x: 7, y: 3 },
       playerColors.WHITE,
       pieceTypes.PAWN,
-      piecesByColor.WHITE_PAWN
+      piecesByColor.WHITE_PAWN,
+      false
     ),
     new Piece(
       { x: 7, y: 4 },
       playerColors.WHITE,
       pieceTypes.PAWN,
-      piecesByColor.WHITE_PAWN
+      piecesByColor.WHITE_PAWN,
+      false
     ),
     new Piece(
       { x: 7, y: 5 },
       playerColors.WHITE,
       pieceTypes.PAWN,
-      piecesByColor.WHITE_PAWN
+      piecesByColor.WHITE_PAWN,
+      false
     ),
     new Piece(
       { x: 7, y: 6 },
       playerColors.WHITE,
       pieceTypes.PAWN,
-      piecesByColor.WHITE_PAWN
+      piecesByColor.WHITE_PAWN,
+      false
     ),
     new Piece(
       { x: 7, y: 7 },
       playerColors.WHITE,
       pieceTypes.PAWN,
-      piecesByColor.WHITE_PAWN
+      piecesByColor.WHITE_PAWN,
+      false
     ),
     new Piece(
       { x: 7, y: 8 },
       playerColors.WHITE,
       pieceTypes.PAWN,
-      piecesByColor.WHITE_PAWN
+      piecesByColor.WHITE_PAWN,
+      false
     ),
     new Piece(
       { x: 8, y: 4 },
       playerColors.WHITE,
       pieceTypes.QUEEN,
-      piecesByColor.WHITE_QUEEN
+      piecesByColor.WHITE_QUEEN,
+      false
     ),
     new Piece(
       { x: 8, y: 1 },
       playerColors.WHITE,
       pieceTypes.ROOK,
-      piecesByColor.WHITE_ROOK
+      piecesByColor.WHITE_ROOK,
+      false
     ),
     new Piece(
       { x: 8, y: 8 },
       playerColors.WHITE,
       pieceTypes.ROOK,
-      piecesByColor.WHITE_ROOK
+      piecesByColor.WHITE_ROOK,
+      false
     )
   ],
   black: [
@@ -129,102 +145,118 @@ export const pieceBasePositions = {
       { x: 1, y: 3 },
       playerColors.BLACK,
       pieceTypes.BISHOP,
-      piecesByColor.BLACK_BISHOP
+      piecesByColor.BLACK_BISHOP,
+      false
     ),
     new Piece(
       { x: 1, y: 6 },
       playerColors.BLACK,
       pieceTypes.BISHOP,
-      piecesByColor.BLACK_BISHOP
+      piecesByColor.BLACK_BISHOP,
+      false
     ),
 
     new Piece(
       { x: 1, y: 5 },
       playerColors.BLACK,
       pieceTypes.KING,
-      piecesByColor.BLACK_KING
+      piecesByColor.BLACK_KING,
+      false
     ),
 
     new Piece(
       { x: 1, y: 2 },
       playerColors.BLACK,
       pieceTypes.KNIGHT,
-      piecesByColor.BLACK_KNIGHT
+      piecesByColor.BLACK_KNIGHT,
+      false
     ),
     new Piece(
       { x: 1, y: 7 },
       playerColors.BLACK,
       pieceTypes.KNIGHT,
-      piecesByColor.BLACK_KNIGHT
+      piecesByColor.BLACK_KNIGHT,
+      false
     ),
 
     new Piece(
       { x: 2, y: 1 },
       playerColors.BLACK,
       pieceTypes.PAWN,
-      piecesByColor.BLACK_PAWN
+      piecesByColor.BLACK_PAWN,
+      false
     ),
     new Piece(
       { x: 2, y: 2 },
       playerColors.BLACK,
       pieceTypes.PAWN,
-      piecesByColor.BLACK_PAWN
+      piecesByColor.BLACK_PAWN,
+      false
     ),
     new Piece(
       { x: 2, y: 3 },
       playerColors.BLACK,
       pieceTypes.PAWN,
-      piecesByColor.BLACK_PAWN
+      piecesByColor.BLACK_PAWN,
+      false
     ),
     new Piece(
       { x: 2, y: 4 },
       playerColors.BLACK,
       pieceTypes.PAWN,
-      piecesByColor.BLACK_PAWN
+      piecesByColor.BLACK_PAWN,
+      false
     ),
     new Piece(
       { x: 2, y: 5 },
       playerColors.BLACK,
       pieceTypes.PAWN,
-      piecesByColor.BLACK_PAWN
+      piecesByColor.BLACK_PAWN,
+      false
     ),
     new Piece(
       { x: 2, y: 6 },
       playerColors.BLACK,
       pieceTypes.PAWN,
-      piecesByColor.BLACK_PAWN
+      piecesByColor.BLACK_PAWN,
+      false
     ),
     new Piece(
       { x: 2, y: 7 },
       playerColors.BLACK,
       pieceTypes.PAWN,
-      piecesByColor.BLACK_PAWN
+      piecesByColor.BLACK_PAWN,
+      false
     ),
     new Piece(
       { x: 2, y: 8 },
       playerColors.BLACK,
       pieceTypes.PAWN,
-      piecesByColor.BLACK_PAWN
+      piecesByColor.BLACK_PAWN,
+      false
     ),
 
     new Piece(
       { x: 1, y: 4 },
       playerColors.BLACK,
       pieceTypes.QUEEN,
-      piecesByColor.BLACK_QUEEN
+      piecesByColor.BLACK_QUEEN,
+      false
     ),
 
     new Piece(
       { x: 1, y: 1 },
       playerColors.BLACK,
       pieceTypes.ROOK,
-      piecesByColor.BLACK_ROOK
+      piecesByColor.BLACK_ROOK,
+      false
     ),
     new Piece(
       { x: 1, y: 8 },
       playerColors.BLACK,
       pieceTypes.ROOK,
-      piecesByColor.BLACK_ROOK
+      piecesByColor.BLACK_ROOK,
+      false
     )
   ]
 }

@@ -3,10 +3,12 @@ export class Piece {
   color: ""
   type: ""
   symbol: ""
-  constructor(position, color, type, symbol) {
+  hasMoved: false
+  constructor(position, color, type, symbol, hasMoved) {
     this.position = position
     this.color = color
     this.type = type
     this.symbol = symbol
+    this.hasMoved = hasMoved
   }
 }
