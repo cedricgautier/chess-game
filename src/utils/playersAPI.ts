@@ -1,6 +1,4 @@
 import { playerColors } from "../constants/players.ts"
-import { pieceBasePositions } from "../constants/pieces.ts"
-import { Piece } from "../classes/piece.ts"
 
 export const getDefaultPlayerInfo = (playerColor: string) => ({
   color: playerColor,

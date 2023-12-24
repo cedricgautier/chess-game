@@ -14,15 +14,14 @@ export const findPiece = (pieceCoordinates, pieces) => {
       piece.position.x === pieceCoordinates.x &&
       piece.position.y === pieceCoordinates.y
     ) {
-      console.log(piece)
       return piece
     }
   }
-} // Not Working
-export const getPieceSymbol = (letter, number, pieces) => {
+}
+export const getPieceSymbol = (letter, number, pieces): String => {
   return findPiece({ x: letter, y: number }, pieces).symbol
 }
-export const getNewPiecePosition = (
+export const getNewPiecePosition: Piece["position"] = (
   chosenPiece: Piece,
   wantedPosition: Piece["position"]
 ): Piece => {

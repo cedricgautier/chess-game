@@ -2,7 +2,7 @@ import { useContext } from "react"
 import Stats from "./Stats"
 import Layout from "./ui/Layout"
 import AppContext from "./AppContextProvider"
-import { getPieceSymbol } from "../utils/gameplayAPI"
+import { getPieceSymbol } from "../utils/gameplayAPI.ts"
 
 const Chessgame = () => {
   const { chessState, play } = useContext(AppContext)

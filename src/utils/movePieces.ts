@@ -1,6 +1,5 @@
 //This is a false positive, used as a Return Type on signature of functions.
 import { Piece } from "../classes/piece.ts" // eslint-disable-line no-unused-vars
-import { getNewPiecePosition } from "./gameplayAPI.ts"
 
 export const moveLikeKing = (
   chosenPiece: Piece,
@@ -14,7 +13,8 @@ export const moveLikeKing = (
 
   if (
     Math.abs(chosenPiece.position.y - wantedPosition.y) === 1 &&
-    Math.abs(chosenPiece.position.x - wantedPosition.x) === 1 // Difference of Y is 1 and difference of X is 1
+    //Difference of Y is 1 and difference of X is 1
+    Math.abs(chosenPiece.position.x - wantedPosition.x) === 1
   ) {
     pieceNewPosition.position = wantedPosition
   }
@@ -33,12 +33,15 @@ export const moveLikeQueen = (
   const pieceNewPosition = { ...chosenPiece }
 
   if (
+    //X is different but y stays the same - Move like Rook
     (wantedPosition.x !== chosenPiece.position.x &&
-      wantedPosition.y === chosenPiece.position.y) || // x is different but y stays the same - Move like Rook
+      wantedPosition.y === chosenPiece.position.y) ||
+    //Y is different but x stays the same - Move like Rook
     (wantedPosition.y !== chosenPiece.position.y &&
-      wantedPosition.x === chosenPiece.position.x) || // y is different but x stays the same - Move like Rook
+      wantedPosition.x === chosenPiece.position.x) ||
+    //Move like Bishop
     Math.abs(chosenPiece.position.x - wantedPosition.x) ===
-      Math.abs(chosenPiece.position.y - wantedPosition.y) //Move like Bishop
+      Math.abs(chosenPiece.position.y - wantedPosition.y)
   ) {
     pieceNewPosition.position = wantedPosition
   }
@@ -81,7 +84,6 @@ export const moveLikePawn = (
 
     return false
   }
-
   const pieceNewPosition = { ...chosenPiece }
 
   if (
@@ -109,10 +111,12 @@ export const moveLikeRook = (
   const pieceNewPosition = { ...chosenPiece }
 
   if (
+    //X is different but y stays the same
     (wantedPosition.x !== chosenPiece.position.x &&
-      wantedPosition.y === chosenPiece.position.y) || // x is different but y stays the same
+      wantedPosition.y === chosenPiece.position.y) ||
+    //Y is different but x stays the same
     (wantedPosition.y !== chosenPiece.position.y &&
-      wantedPosition.x === chosenPiece.position.x) // y is different but x stays the same
+      wantedPosition.x === chosenPiece.position.x)
   ) {
     pieceNewPosition.position = wantedPosition
   }
@@ -131,10 +135,12 @@ export const movelikeKnight = (
   const pieceNewPosition = { ...chosenPiece }
 
   if (
+    //Difference of Y is 2 and difference of X is 1
     (Math.abs(chosenPiece.position.y - wantedPosition.y) === 2 &&
-      Math.abs(chosenPiece.position.x - wantedPosition.x) === 1) || // Difference of Y is 2 and difference of X is 1
+      Math.abs(chosenPiece.position.x - wantedPosition.x) === 1) ||
+    //Difference of Y is 1 and difference of X is 2
     (Math.abs(chosenPiece.position.y - wantedPosition.y) === 1 &&
-      Math.abs(chosenPiece.position.x - wantedPosition.x) === 2) // Difference of Y is 1 and difference of X is 2
+      Math.abs(chosenPiece.position.x - wantedPosition.x) === 2)
   ) {
     pieceNewPosition.position = wantedPosition
   }
